@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch src/index.js",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+    "test": "cross-env TEST=true node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
   },
   "author": "Renan Ponick",
   "license": "ISC",
@@ -14,6 +14,7 @@
     "express": "^5.1.0"
   },
   "devDependencies": {
+    "cross-env": "^10.1.0",
     "jest": "^30.4.2"
   }
 }
