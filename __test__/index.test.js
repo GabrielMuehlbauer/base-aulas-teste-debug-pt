@@ -247,3 +247,127 @@ describe("Testes da Calculadora - Divisão", () => {
         expect(result).toThrow("Envie todos os campos!");
     });
 });
+
+describe("Testes da Calculadora - Potência", () => {
+    it("CT49: Deve calcular a potência de 2 elevado a 3 e retornar 8", () => {
+        const result = Service.Potencia(2, 3);
+        expect(result).toBe(8);
+    });
+    
+    it("CT50: Deve calcular a potência de -5 elevado a 2 e retornar 25", () => {
+        const result = Service.Potencia(-5, 2);
+        expect(result).toBe(25);
+    });
+    
+    it("CT51: Deve calcular a potência de 10 elevado a -2 e retornar 0.01", () => {
+        const result = Service.Potencia(10, -2);
+        expect(result).toBe(0.01);
+    });
+    
+    it("CT52: Deve calcular a potência de -5 elevado a -3 e retornar -0.008", () => {
+        const result = Service.Potencia(-5, -3);
+        expect(result).toBe(-0.008);
+    });
+    
+    it("CT53: Deve calcular a potência de 0.5 elevado a 2 e retornar 0.25", () => {
+        const result = Service.Potencia(0.5, 2);
+        expect(result).toBe(0.25);
+    });
+    
+    it("CT54: Deve retornar erro ao enviar letra na base", () => {
+        const result = () => Service.Potencia('a', 1);
+        expect(result).toThrow("Enviar somente números");
+    });
+    
+    it("CT55: Deve retornar erro ao enviar letra no expoente", () => {
+        const result = () => Service.Potencia(1, 'a');
+        expect(result).toThrow("Enviar somente números");
+    });
+    
+    it("CT56: Deve calcular a potência de 0 elevado a 1 e retornar 0", () => {
+        const result = Service.Potencia(0, 1);
+        expect(result).toBe(0);
+    });
+    
+    it("CT57: Deve calcular a potência de 1 elevado a 0 e retornar 1", () => {
+        const result = Service.Potencia(1, 0);
+        expect(result).toBe(1);
+    });
+    
+    it("CT58: Deve retornar erro ao omitir a base", () => {
+        const result = () => Service.Potencia(undefined, 1);
+        expect(result).toThrow("Envie todos os campos!");
+    });
+    
+    it("CT59: Deve retornar erro ao omitir o expoente", () => {
+        const result = () => Service.Potencia(1);
+        expect(result).toThrow("Envie todos os campos!");
+    });
+    
+    it("CT60: Deve retornar erro ao omitir ambos os parâmetros", () => {
+        const result = () => Service.Potencia();
+        expect(result).toThrow("Envie todos os campos!");
+    });
+});
+
+describe("Testes da Calculadora - Radiciação", () => {
+    it("CT61: Deve calcular a raiz quadrada de 9 e retornar 3", () => {
+        const result = Service.Radiciar(9, 2);
+        expect(result).toBe(3);
+    });
+    
+    it("CT62: Deve calcular a raiz cúbica de -8 e retornar -2", () => {
+        const result = Service.Radiciar(-8, 3);
+        expect(result).toBe(-2);
+    });
+    
+    it("CT63: Deve calcular a raiz quadrada de 10 e retornar o valor aproximado", () => {
+        const result = Service.Radiciar(10, 2);
+        expect(result).toBeCloseTo(3.16227766, 5);
+    });
+    
+    it("CT64: Deve retornar erro ao tentar calcular raiz real de número negativo com índice par", () => {
+        const result = () => Service.Radiciar(-4, 2);
+        expect(result).toThrow("Não existe raiz real de número negativo com índice par");
+    });
+    
+    it("CT65: Deve calcular a raiz quadrada de 0.25 e retornar 0.5", () => {
+        const result = Service.Radiciar(0.25, 2);
+        expect(result).toBe(0.5);
+    });
+    
+    it("CT66: Deve retornar erro ao enviar letra no radicando", () => {
+        const result = () => Service.Radiciar('a', 2);
+        expect(result).toThrow("Enviar somente números");
+    });
+    
+    it("CT67: Deve retornar erro ao enviar letra no índice", () => {
+        const result = () => Service.Radiciar(9, 'a');
+        expect(result).toThrow("Enviar somente números");
+    });
+    
+    it("CT68: Deve calcular a raiz quadrada de 0 e retornar 0", () => {
+        const result = Service.Radiciar(0, 2);
+        expect(result).toBe(0);
+    });
+    
+    it("CT69: Deve retornar erro ao enviar índice zero", () => {
+        const result = () => Service.Radiciar(9, 0);
+        expect(result).toThrow("Índice não pode ser zero");
+    });
+    
+    it("CT70: Deve retornar erro ao omitir o radicando", () => {
+        const result = () => Service.Radiciar(undefined, 2);
+        expect(result).toThrow("Envie todos os campos!");
+    });
+    
+    it("CT71: Deve retornar erro ao omitir o índice", () => {
+        const result = () => Service.Radiciar(9);
+        expect(result).toThrow("Envie todos os campos!");
+    });
+    
+    it("CT72: Deve retornar erro ao omitir ambos os parâmetros", () => {
+        const result = () => Service.Radiciar();
+        expect(result).toThrow("Envie todos os campos!");
+    });
+});
