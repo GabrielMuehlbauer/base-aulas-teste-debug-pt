@@ -1,4 +1,5 @@
-import Service from "../src/services/exercicios.js";
+import Service from "../../src/services/exercicios.js";
+import { describe, it, expect } from '@jest/globals';
 
 describe("Testes da Calculadora - Adição", () => {
     it("CT01: Deve somar 2 e 95 e retornar 97", () => {
@@ -248,7 +249,7 @@ describe("Testes da Calculadora - Divisão", () => {
     });
 });
 
-describe("Testes da Calculadora - Potência", () => {
+describe("Testes da Calculadora - Potência ", () => {
     it("CT49: Deve calcular a potência de 2 elevado a 3 e retornar 8", () => {
         const result = Service.Potencia(2, 3);
         expect(result).toBe(8);

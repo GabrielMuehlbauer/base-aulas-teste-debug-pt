@@ -9,7 +9,7 @@ class Controller {
             res.status(200).send({ resultado })
         } catch (e) {
             console.log(e);
-            res.status(500).send({ err: e.message });
+            res.status(400).send({ err: e.message });
         }
     }
 
@@ -21,7 +21,7 @@ class Controller {
             res.status(200).send({ resultado })
         } catch (e) {
             console.log(e);
-            res.status(500).send({ err: e.message });
+            res.status(400).send({ err: e.message });
         }
     }
 
@@ -33,7 +33,7 @@ class Controller {
             res.status(200).send({ resultado })
         } catch (e) {
             console.log(e);
-            res.status(500).send({ err: e.message });
+            res.status(400).send({ err: e.message });
         }
     }
 
@@ -45,7 +45,7 @@ class Controller {
             res.status(200).send({ resultado })
         } catch (e) {
             console.log(e);
-            res.status(500).send({ err: e.message });
+            res.status(400).send({ err: e.message });
         }
     }
 
@@ -57,7 +57,7 @@ class Controller {
             res.status(200).send({ resultado });
         } catch (e) {
             console.log(e);
-            res.status(500).send({ err: e.message });
+            res.status(400).send({ err: e.message });
         }
     }
 
@@ -69,7 +69,7 @@ class Controller {
             res.status(200).send({ resultado });
         } catch (e) {
             console.log(e);
-            res.status(500).send({ err: e.message });
+            res.status(400).send({ err: e.message });
         }
     }
 }
